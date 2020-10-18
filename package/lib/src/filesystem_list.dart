@@ -40,6 +40,11 @@ class FilesystemList extends StatelessWidget {
               (allowedExtensions.length > 0)) {
             if (!allowedExtensions.contains(Path.extension(file.path))) return;
           }
+
+          // print(file);
+          // if (file.path.contains("Documents/inbox") == false)
+          if (Path.basename(file.path)[0] == '.') return;
+
           files.add(file);
         }
       },

@@ -59,9 +59,10 @@ class Breadcrumbs<T> extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return ButtonTheme(
               minWidth: 48,
-              padding: EdgeInsets.symmetric(
-                      vertical: ButtonTheme.of(context).padding.vertical) +
-                  const EdgeInsets.symmetric(horizontal: 8),
+              padding: EdgeInsets.all(0),
+              // padding: EdgeInsets.symmetric(
+              //         vertical: ButtonTheme.of(context).padding.vertical) +
+              //     const EdgeInsets.symmetric(horizontal: 8),
               child: FlatButton(
                 textColor: (index == (items.length - 1))
                     ? (textColor ?? defaultTextColor)
@@ -86,7 +87,7 @@ class Breadcrumbs<T> extends StatelessWidget {
             ),
           ),
           headerBuilder: (_) =>
-              SizedBox(width: ButtonTheme.of(context).padding.horizontal - 8),
+              SizedBox(width: ButtonTheme.of(context).padding.horizontal - 12),
           footerBuilder: (_) => const SizedBox(width: 70),
         ),
       ),
